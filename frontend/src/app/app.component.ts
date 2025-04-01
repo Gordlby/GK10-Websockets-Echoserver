@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'frontend';
   form: FormGroup;
   ws: WsService = new WsService();
+  text: string = "Websocket";
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -26,15 +27,22 @@ export class AppComponent {
   }
 
   onTest() {
-    this.ws.sendMessage("test");
+    this.sendMessage("test");
   }
   onSend(event: Event) {
     event.preventDefault();
     console.log(this.form);
     if (this.form.value.text === '') {
       console.error("Message is empty");
+      this.text = "[ERROR] Message is empty";
       return;
     }
-    this.ws.sendMessage(this.form.value.text);
+    this.sendMessage(this.form.value.text);
+  }
+  private sendMessage(message: string) {
+    this.ws.sendMessage(message, (response: string) => {
+      console.log("Response from server: ", response);
+      this.text = 'Serverantwort: "' + response + '"';
+    });
   }
 }

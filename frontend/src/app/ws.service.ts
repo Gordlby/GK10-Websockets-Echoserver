@@ -24,10 +24,17 @@ export class WsService {
     };
   }
 
-  sendMessage(message: string) {
+  sendMessage(message: string, callback?: (response: string) => void) {
     if (this.ws.readyState === WebSocket.OPEN) {
       this.ws.send(message);
       console.log("Message sent: ", message);
+
+    this.ws.onmessage = (event) => {
+        console.log("Response from server: ", event.data);
+        if (callback) {
+          callback(event.data);
+        }
+    };
     } else {
       console.error("WebSocket is not open. Unable to send message.");
     }
