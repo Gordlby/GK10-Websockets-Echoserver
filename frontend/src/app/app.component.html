@@ -1,25 +1,25 @@
 <section class="py-4 py-xl-5">
-  <div class="container">
-      <div class="text-center p-4 p-lg-5">
-          <p class="fw-bold text-primary mb-2">{{ text }}</p>
-          <h1 class="fw-bold mb-4">Teste den Websocket mit einer einfachen Nachricht</h1><button class="btn btn-primary fs-5 me-2 py-2 px-4" type="button" (click)="onTest()">Test</button>
-          <div class="col-12 mt-4">
-              <div class="card mb-5">
-                  <div class="card-body p-sm-5">
-                      <form  [formGroup]="form" (ngSubmit)="onSend($event)">
-                          <div class="mb-3"></div>
-                          <div class="mb-3"></div>
-                          <div class="mb-3"><textarea class="form-control" id="message-2" formControlName="text" rows="6" placeholder="Message"></textarea></div>
-                          <div><button class="btn btn-primary d-block w-100" type="submit">Send</button></div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-<section class="position-relative py-4 py-xl-5">
-  <div class="container position-relative">
-      <div class="row d-flex justify-content-center"></div>
-  </div>
-</section>
+    <div class="container">
+        <div class="text-center p-4 p-lg-5">
+            <p class="fw-bold text-primary mb-2">{{ text }}</p>
+            <h1 class="fw-bold mb-4">Teste den Websocket mit einer einfachen Nachricht</h1><button class="btn btn-primary fs-5 me-2 py-2 px-4" type="button" (click)="onTest()">Test</button>
+            <div class="col-12 mt-4">
+                <div class="card mb-5">
+                    <div class="card-body p-sm-5">
+                        <form  [formGroup]="form" (ngSubmit)="onSend($event)">
+                            <div class="mb-3"></div>
+                            <div class="mb-3"></div>
+                            <div class="mb-3"><textarea class="form-control" id="message-2" formControlName="text" rows="6" placeholder="Message"></textarea></div>
+                            <div><button class="btn btn-primary d-block w-100" type="submit">Send</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section class="position-relative py-4 py-xl-5">
+    <div class="container position-relative">
+        <div class="row d-flex justify-content-center"></div>
+    </div>
+  </section>

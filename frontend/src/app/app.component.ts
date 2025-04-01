@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { WsService } from './ws.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   providers: [WsService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
